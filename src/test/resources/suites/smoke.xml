@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="iLovePDF Smoke Suite" verbose="1" parallel="false">
+
+    <listeners>
+        <listener class-name="com.ilovepdf.listeners.TestListener"/>
+        <listener class-name="com.ilovepdf.listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <parameter name="browser" value="chrome"/>
+
+    <test name="Smoke Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.ilovepdf.tests.smoke"/>
+        </packages>
+    </test>
+</suite>

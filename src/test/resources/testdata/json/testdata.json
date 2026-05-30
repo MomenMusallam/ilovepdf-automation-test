@@ -1,0 +1,32 @@
+[
+  {
+    "testCase": "TC_LOGIN_001",
+    "email": "validuser@test.com",
+    "password": "Test@1234",
+    "expectedResult": "success"
+  },
+  {
+    "testCase": "TC_LOGIN_002",
+    "email": "invalid@test.com",
+    "password": "WrongPass",
+    "expectedResult": "failure"
+  },
+  {
+    "testCase": "TC_LOGIN_003",
+    "email": "",
+    "password": "Test@1234",
+    "expectedResult": "validation_error"
+  },
+  {
+    "testCase": "TC_MERGE_001",
+    "file1": "sample1.pdf",
+    "file2": "sample2.pdf",
+    "expectedResult": "merged"
+  },
+  {
+    "testCase": "TC_COMPRESS_001",
+    "file": "sample1.pdf",
+    "compressionLevel": "recommended",
+    "expectedResult": "compressed"
+  }
+]
