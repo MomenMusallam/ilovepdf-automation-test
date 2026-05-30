@@ -11,7 +11,7 @@ build/
 
 logs/
 screenshots/
-reports/
+# reports/
 downloads/
 test-output/
 
