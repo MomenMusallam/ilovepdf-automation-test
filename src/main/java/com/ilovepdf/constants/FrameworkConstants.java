@@ -14,7 +14,7 @@ public final class FrameworkConstants {
     private static final String PDF_TESTDATA_PATH = RESOURCES_PATH + "testdata/pdf/";
 
     private static final int IMPLICIT_WAIT = 10;
-    private static final int EXPLICIT_WAIT = 20;
+    private static final int EXPLICIT_WAIT = 10;
     private static final int PAGE_LOAD_TIMEOUT = 30;
     private static final int RETRY_COUNT = 2;
 

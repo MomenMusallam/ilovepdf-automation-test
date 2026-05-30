@@ -19,7 +19,7 @@ public class HomePage extends BasePage {
     private final By compressPdfTile     = By.xpath("//a[contains(@href, '/compress_pdf')]");
     private final By pdfToWordTile       = By.xpath("//a[contains(@href, '/pdf_to_word')]");
     private final By pdfToPowerPointTile = By.xpath("//a[contains(@href, '/pdf_to_powerpoint')]");
-    private final By pdfToExcelTile      = By.xpath("//a[contains(@href, '/pdf_to_excel')]");
+    private final By pdfToExcelTile      = By.xpath("//div[@class='tools__item']//a[contains(@href, '/pdf_to_excel')]");
     private final By wordToPdfTile       = By.xpath("//a[contains(@href, '/word_to_pdf')]");
     private final By powerPointToPdfTile = By.xpath("//a[contains(@href, '/powerpoint_to_pdf')]");
     private final By excelToPdfTile      = By.xpath("//a[contains(@href, '/excel_to_pdf')]");
@@ -73,11 +73,11 @@ public class HomePage extends BasePage {
 //        return new PDFToPowerPointPage();
 //    }
 //
-//    public PDFToExcelPage goToPDFToExcel() {
-//        click(pdfToExcelTile);
-//        log.info("Navigated to PDF to Excel page");
-//        return new PDFToExcelPage();
-//    }
+    public PDFToExcelPage goToPDFToExcel() {
+        click(pdfToExcelTile);
+        log.info("Navigated to PDF to Excel page");
+        return new PDFToExcelPage();
+    }
 //
 //    public WordToPDFPage goToWordToPDF() {
 //        click(wordToPdfTile);
