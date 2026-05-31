@@ -86,11 +86,11 @@ public class HomePage extends BasePage {
 //        return new PDFToExcelPage();
 //    }
 //
-//    public WordToPDFPage goToWordToPDF() {
-//        click(wordToPdfTile);
-//        log.info("Navigated to Word to PDF page");
-//        return new WordToPDFPage();
-//    }
+    public WordToPDFPage goToWordToPDF() {
+        click(wordToPdfTile);
+        log.info("Navigated to Word to PDF page");
+        return new WordToPDFPage();
+    }
 //
 //    public PowerPointToPDFPage goToPowerPointToPDF() {
 //        click(powerPointToPdfTile);
