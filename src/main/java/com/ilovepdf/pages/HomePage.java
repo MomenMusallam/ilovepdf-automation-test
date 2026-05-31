@@ -20,7 +20,7 @@ public class HomePage extends BasePage {
     private final By organizePdfTile = By.xpath("//a[contains(@href, '/organize_pdf')]");
     private final By loginButton = By.cssSelector("a[href*='/signin']");
     private final By signupButton = By.cssSelector("a[href*='/signup']");
-
+    private final By pptToPdfTile = By.xpath("//a[contains(@href, '/powerpoint_to_pdf')]");
     public HomePage open() {
         BrowserHelper.navigateTo(ConfigReader.get("base.url"));
         log.info("Opened iLovePDF home page");
@@ -47,6 +47,13 @@ public class HomePage extends BasePage {
         return new PDFToWordPage();
     }
 
+    
+    public PowerPointToPDFPage goToPowerPointToPDF() {
+        BrowserHelper.navigateTo(ConfigReader.get("base.url") + "/powerpoint_to_pdf");
+        return new PowerPointToPDFPage();
+    }
+    
+    
     public boolean isMergeTileDisplayed() { return isDisplayed(mergePdfTile); }
     public boolean isSplitTileDisplayed() { return isDisplayed(splitPdfTile); }
     public boolean isCompressTileDisplayed() { return isDisplayed(compressPdfTile); }
