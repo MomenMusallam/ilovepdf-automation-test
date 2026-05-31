@@ -8,23 +8,46 @@ import org.testng.annotations.Test;
 
 public class CompressPDFTests extends BaseTest {
 
-    @Test(description = "Verify Compress page loads correctly", groups = {"regression"})
+    private final String testFileName = "sample1.pdf"; 
+    private final String invalidFileName = "image.jpg"; 
+
+    @Test(priority = 1, description = "Verify Compress page loads", groups = {"regression"})
     public void verifyCompressPageLoads() {
-        CompressPDFPage compress = new HomePage().open().goToCompressPDF();
-        Assert.assertTrue(compress.isPageDisplayed(), "Compress page not displayed");
+        Assert.assertTrue(new HomePage().open().goToCompressPDF().isPageDisplayed());
     }
 
-    @Test(description = "Verify recommended compression option", groups = {"regression"})
+    @Test(priority = 2, description = "Verify recommended compression", groups = {"regression"})
     public void verifyRecommendedCompression() {
-        CompressPDFPage compress = new HomePage().open().goToCompressPDF();
-        compress.uploadFile("sample1.pdf").selectRecommendedCompression();
-        Assert.assertTrue(compress.isPageDisplayed(), "Page not displayed");
+        Assert.assertTrue(new HomePage().open().goToCompressPDF()
+                .uploadFile(testFileName)
+                .selectRecommendedCompression()
+                .clickCompress()
+                .isDownloadButtonVisible());
     }
 
-    @Test(description = "Verify extreme compression option", groups = {"regression"})
+    @Test(priority = 3, description = "Verify extreme compression", groups = {"regression"})
     public void verifyExtremeCompression() {
+        Assert.assertTrue(new HomePage().open().goToCompressPDF()
+                .uploadFile(testFileName)
+                .selectExtremeCompression()
+                .clickCompress()
+                .isDownloadButtonVisible());
+    }
+
+    @Test(priority = 4, description = "Verify invalid file handling", groups = {"regression"})
+    public void verifyInvalidFileTypeUpload() {
         CompressPDFPage compress = new HomePage().open().goToCompressPDF();
-        compress.uploadFile("sample1.pdf").selectExtremeCompression();
-        Assert.assertTrue(compress.isPageDisplayed(), "Page not displayed");
+        compress.uploadFile(invalidFileName);
+        Assert.assertTrue(compress.isPageDisplayed());
+    }
+
+    @Test(priority = 5, description = "Verify download trigger", groups = {"regression"})
+    public void verifyCompressedFileDownloadedSuccessfully() {
+        CompressPDFPage compress = new HomePage().open().goToCompressPDF();
+        compress.uploadFile(testFileName).selectRecommendedCompression().clickCompress();
+        
+        Assert.assertTrue(compress.isDownloadButtonVisible());
+        compress.clickDownload();
+        Assert.assertTrue(compress.isDownloadTriggered());
     }
 }
