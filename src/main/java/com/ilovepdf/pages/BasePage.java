@@ -23,6 +23,7 @@ public abstract class BasePage {
     protected void clearAndType(By locator, String text) { InputHelper.clearAndType(locator, text); }
     protected String getText(By locator) { return ElementHelper.getText(locator); }
     protected boolean isDisplayed(By locator) { return ElementHelper.isDisplayed(locator); }
+    protected boolean isDisable(By locator) { return driver.findElement(locator).isEnabled() == false; }
     protected void scrollTo(By locator) { ScrollHelper.scrollToElement(locator); }
     protected void uploadFile(By locator, String fileName) { FileHelper.uploadFile(locator, fileName); }
     protected String currentUrl() { return BrowserHelper.getCurrentUrl(); }
