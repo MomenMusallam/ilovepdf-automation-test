@@ -3,6 +3,9 @@ package com.ilovepdf.tests.regression;
 import com.ilovepdf.base.BaseTest;
 import com.ilovepdf.pages.CompressPDFPage;
 import com.ilovepdf.pages.HomePage;
+
+import com.ilovepdf.drivers.DriverManager;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -50,4 +53,16 @@ public class CompressPDFTests extends BaseTest {
         compress.clickDownload();
         Assert.assertTrue(compress.isDownloadTriggered());
     }
+    @Test(priority = 6, description = "Verify that error message appears for invalid file")
+    public void verifyErrorMessageForInvalidFile() throws InterruptedException {
+        CompressPDFPage compress = new HomePage().open().goToCompressPDF();
+                compress.uploadFile("empty.pdf"); 
+        
+        Thread.sleep(3000); 
+        
+        boolean isCompressButtonEnabled = DriverManager.getDriver()
+                                           .findElement(By.id("processTask")).isEnabled();
+        
+        Assert.assertFalse(isCompressButtonEnabled, "System allowed compression of an empty file!");
+    }      
 }

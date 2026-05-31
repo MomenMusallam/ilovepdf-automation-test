@@ -42,24 +42,25 @@ public final class DriverFactory {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 
-        if (ConfigReader.getBoolean("headless")) {
-            options.addArguments("--headless=new");
-        }
-
         Map<String, Object> prefs = new HashMap<>();
-        prefs.put("download.default_directory", FrameworkConstants.getDownloadFolder());
+        
+        String downloadPath = new java.io.File(FrameworkConstants.getDownloadFolder()).getAbsolutePath();
+        prefs.put("download.default_directory", downloadPath);
+        
         prefs.put("download.prompt_for_download", false);
+        prefs.put("download.directory_upgrade", true);
+        
         prefs.put("plugins.always_open_pdf_externally", true);
+        
         options.setExperimentalOption("prefs", prefs);
 
-        options.addArguments("--disable-notifications");
+        options.addArguments("--disable-extensions");
         options.addArguments("--disable-popup-blocking");
-        options.addArguments("--remote-allow-origins=*");
-        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-
+        options.addArguments("--no-sandbox");
+        
         return new ChromeDriver(options);
     }
-
+    
     private static WebDriver createFirefoxDriver() {
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();

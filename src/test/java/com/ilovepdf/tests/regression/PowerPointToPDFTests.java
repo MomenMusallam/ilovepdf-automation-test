@@ -88,4 +88,16 @@ public class PowerPointToPDFTests extends BaseTest {
         page.navigateTo().uploadFile(PPT_FILE).clickConvert();
         Assert.assertTrue(page.isDownloadButtonVisible(), "Conversion flow failed");
     }
+    
+    @Test(priority = 12, groups = {"regression"}, description = "Verify that uploading an empty file is handled")
+    public void testEmptyFileUpload() throws InterruptedException {
+        PowerPointToPDFPage page = new PowerPointToPDFPage();
+        page.navigateTo().uploadFile("empty.ppt");
+                Thread.sleep(3000);        
+        boolean isErrorVisible = page.isUploadErrorDisplayed();
+        
+        Assert.assertTrue(isErrorVisible, 
+          "empty file was uploaded here");
+    }
+    
 }
