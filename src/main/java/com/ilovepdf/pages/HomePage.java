@@ -110,11 +110,11 @@ public class HomePage extends BasePage {
 //        return new EditPDFPage();
 //    }
 //
-//    public PDFToJPGPage goToPDFToJPG() {
-//        click(pdfToJpgTile);
-//        log.info("Navigated to PDF to JPG page");
-//        return new PDFToJPGPage();
-//    }
+    public PDFToJPGPage goToPDFToJPG() {
+        click(pdfToJpgTile);
+        log.info("Navigated to PDF to JPG page");
+        return new PDFToJPGPage();
+    }
 //
 //    public JPGToPDFPage goToJPGToPDF() {
 //        click(jpgToPdfTile);
