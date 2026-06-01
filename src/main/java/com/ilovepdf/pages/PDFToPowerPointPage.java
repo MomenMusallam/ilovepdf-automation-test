@@ -4,11 +4,11 @@ import com.ilovepdf.helpers.ValidationHelper;
 import org.openqa.selenium.By;
 
 /**
- * Page Object for ilovepdf.com/pdf_to_word
+ * Page Object for ilovepdf.com/pdf_to_powerpoint
  *
- * Converts PDF files to editable .docx format.
+ * Converts PDF files to editable .pptx format.
  */
-public class PDFToWordPage extends BasePage {
+public class PDFToPowerPointPage extends BasePage {
 
     // ── Upload ────────────────────────────────────────────────────────────────
     private final By selectFilesButton = By.id("pickfiles");
@@ -18,26 +18,25 @@ public class PDFToWordPage extends BasePage {
     private final By convertButton     = By.id("processTask");
 
     // ── Result state ──────────────────────────────────────────────────────────
-    private final By successTitle      = By.xpath("//h1[text()='Your PDF has been converted to an editable WORD document']");
-    private final By downloadButton    = By.xpath("//a[@id='pickfiles']");
+    private final By successTitle       = By.xpath("//h1[text()='Your PDF has been converted to an editable POWERPOINT presentation']");
+    private final By downloadButton     = By.xpath("//a[@id='pickfiles']");
 
     // ── Page identity ─────────────────────────────────────────────────────────
-    private final By pageTitle1          = By.xpath("//h1[contains(normalize-space(),'PDF to WORD') and @class='tool__header__title']");
-    private final By pageTitle2          = By.xpath("//div[contains(normalize-space(),'PDF to Word') and @class='option__panel__title']");
-
+    private final By pageTitle1          = By.xpath("//h1[contains(normalize-space(),'PDF to POWERPOINT') and @class='tool__header__title']");
+    private final By pageTitle2          = By.xpath("//div[contains(normalize-space(),'PDF to PowerPoint') and @class='option__panel__title']");
     // ─────────────────────────────────────────────────────────────────────────
     // Actions
     // ─────────────────────────────────────────────────────────────────────────
 
-    public PDFToWordPage uploadFile(String fileName) {
+    public PDFToPowerPointPage uploadFile(String fileName) {
         super.uploadFile(fileInput, fileName);
-        log.info("Uploaded file to PDF to Word page: {}", fileName);
+        log.info("Uploaded file to PDF to PowerPoint page: {}", fileName);
         return this;
     }
 
-    public PDFToWordPage clickConvert() {
+    public PDFToPowerPointPage clickConvert() {
         click(convertButton);
-        log.info("Clicked Convert to Word button");
+        log.info("Clicked Convert to PowerPoint button");
         return this;
     }
 
@@ -58,8 +57,8 @@ public class PDFToWordPage extends BasePage {
     // Validations
     // ─────────────────────────────────────────────────────────────────────────
 
-    public PDFToWordPage verifyUrlContainsPdfToWord() {
-        ValidationHelper.verifyUrlContains("pdf_to_word");
+    public PDFToPowerPointPage verifyUrlContainsPdfToPowerPoint() {
+        ValidationHelper.verifyUrlContains("pdf_to_powerpoint");
         return this;
     }
 }

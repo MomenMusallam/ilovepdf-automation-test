@@ -4,11 +4,11 @@ import com.ilovepdf.helpers.ValidationHelper;
 import org.openqa.selenium.By;
 
 /**
- * Page Object for ilovepdf.com/pdf_to_word
+ * Page Object for ilovepdf.com/excel_to_pdf
  *
- * Converts PDF files to editable .docx format.
+ * Converts .xls / .xlsx files to PDF format.
  */
-public class PDFToWordPage extends BasePage {
+public class ExcelToPDFPage extends BasePage {
 
     // ── Upload ────────────────────────────────────────────────────────────────
     private final By selectFilesButton = By.id("pickfiles");
@@ -18,26 +18,29 @@ public class PDFToWordPage extends BasePage {
     private final By convertButton     = By.id("processTask");
 
     // ── Result state ──────────────────────────────────────────────────────────
-    private final By successTitle      = By.xpath("//h1[text()='Your PDF has been converted to an editable WORD document']");
-    private final By downloadButton    = By.xpath("//a[@id='pickfiles']");
+    private final By successTitle       = By.xpath("//h1[text()='EXCEL file has been converted to PDF']");
+    private final By downloadButton     = By.xpath("//a[@id='pickfiles']");
+
+    // ── Error feedback ────────────────────────────────────────────────────────
+    private final By errorMessage      = By.cssSelector(".alert-danger, [class*='error'], [class*='alert']");
 
     // ── Page identity ─────────────────────────────────────────────────────────
-    private final By pageTitle1          = By.xpath("//h1[contains(normalize-space(),'PDF to WORD') and @class='tool__header__title']");
-    private final By pageTitle2          = By.xpath("//div[contains(normalize-space(),'PDF to Word') and @class='option__panel__title']");
+    private final By pageTitle1         = By.xpath("//h1[contains(normalize-space(),'Convert EXCEL to PDF') and @class='tool__header__title']");
+    private final By pageTitle2          = By.xpath("//div[contains(normalize-space(),'Excel to PDF') and @class='option__panel__title']");
 
     // ─────────────────────────────────────────────────────────────────────────
     // Actions
     // ─────────────────────────────────────────────────────────────────────────
 
-    public PDFToWordPage uploadFile(String fileName) {
+    public ExcelToPDFPage uploadFile(String fileName) {
         super.uploadFile(fileInput, fileName);
-        log.info("Uploaded file to PDF to Word page: {}", fileName);
+        log.info("Uploaded file to Excel to PDF page: {}", fileName);
         return this;
     }
 
-    public PDFToWordPage clickConvert() {
+    public ExcelToPDFPage clickConvert() {
         click(convertButton);
-        log.info("Clicked Convert to Word button");
+        log.info("Clicked Convert Excel to PDF button");
         return this;
     }
 
@@ -50,6 +53,7 @@ public class PDFToWordPage extends BasePage {
     public boolean isConvertButtonDisplayed()     { return isDisplayed(convertButton); }
     public boolean isConversionSuccessful()       { return isDisplayed(successTitle); }
     public boolean isDownloadAvailable()          { return isDisplayed(downloadButton); }
+    public boolean isErrorMessageDisplayed()      { return isDisplayed(errorMessage); }
 
     public String getPageHeadingText()            { return getText(pageTitle1); }
     public String getCurrentUrl()                 { return currentUrl(); }
@@ -58,8 +62,8 @@ public class PDFToWordPage extends BasePage {
     // Validations
     // ─────────────────────────────────────────────────────────────────────────
 
-    public PDFToWordPage verifyUrlContainsPdfToWord() {
-        ValidationHelper.verifyUrlContains("pdf_to_word");
+    public ExcelToPDFPage verifyUrlContainsExcelToPdf() {
+        ValidationHelper.verifyUrlContains("excel_to_pdf");
         return this;
     }
 }
