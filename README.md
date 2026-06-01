@@ -14,8 +14,6 @@ Enterprise-grade Selenium WebDriver + TestNG automation framework for [ilovepdf.
 | Momen Musallam | QA Engineer |
 | Safa Abu-Hadeed | QA Engineer |
 
-**Supervisor:** Dr. Shafaq Jaber  
-**Submitted To:** Mr. Mamoun Suboh
 
 ---
 
