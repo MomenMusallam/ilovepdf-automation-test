@@ -11,17 +11,92 @@
 
     <test name="Sanity Tests">
         <classes>
-            <class name="com.ilovepdf.tests.smoke.NavigationSmokeTest"/>
+
+            <!-- Navigation -->
+            <class name="com.ilovepdf.tests.smoke.NavigationSmokeTest">
+                <methods>
+                    <include name="verifyHomePageLoadsWithTools"/>
+                </methods>
+            </class>
+
+            <!-- Organize PDF -->
             <class name="com.ilovepdf.tests.regression.MergePDFTests">
                 <methods>
                     <include name="verifyMergePageLoads"/>
                 </methods>
             </class>
+            <class name="com.ilovepdf.tests.regression.SplitPDFTests">
+                <methods>
+                    <include name="verifySplitPageLoads"/>
+                </methods>
+            </class>
+
+            <!-- Optimize PDF -->
             <class name="com.ilovepdf.tests.regression.CompressPDFTests">
                 <methods>
                     <include name="verifyCompressPageLoads"/>
                 </methods>
             </class>
+
+            <!-- Convert to PDF -->
+            <class name="com.ilovepdf.tests.regression.WordToPDFTests">
+                <methods>
+                    <include name="verifyWordToPdfPageLoads"/>
+                </methods>
+            </class>
+            <class name="com.ilovepdf.tests.regression.PowerPointToPDFTests">
+                <methods>
+                    <include name="testPageUrl"/>
+                </methods>
+            </class>
+            <class name="com.ilovepdf.tests.regression.ExcelToPDFTests">
+                <methods>
+                    <include name="verifyExcelToPdfPageLoads"/>
+                </methods>
+            </class>
+
+            <!-- Convert from PDF -->
+            <class name="com.ilovepdf.tests.regression.PDFToWordTests">
+                <methods>
+                    <include name="verifyPdfToWordPageLoads"/>
+                </methods>
+            </class>
+            <class name="com.ilovepdf.tests.regression.PDFToPowerPointTests">
+                <methods>
+                    <include name="verifyPdfToPptPageLoads"/>
+                </methods>
+            </class>
+            <class name="com.ilovepdf.tests.regression.PDFToExcelTests">
+                <methods>
+                    <include name="verifyPdfToExcelPageLoads"/>
+                </methods>
+            </class>
+            <class name="com.ilovepdf.tests.regression.PDFToJPGTests">
+                <methods>
+                    <include name="verifyPdfToJpgPageLoads"/>
+                </methods>
+            </class>
+
+            <!-- Edit PDF -->
+            <class name="com.ilovepdf.tests.regression.RotatePDFTests">
+                <methods>
+                    <include name="verifyRotatePageLoads"/>
+                </methods>
+            </class>
+
+            <!-- PDF Security -->
+            <class name="com.ilovepdf.tests.regression.ProtectPDFTests">
+                <methods>
+                    <include name="verifyProtectPageLoads"/>
+                </methods>
+            </class>
+            <class name="com.ilovepdf.tests.regression.UnlockPDFTests">
+                <methods>
+                    <include name="verifyUnlockPageLoads"/>
+                </methods>
+            </class>
+
         </classes>
     </test>
+
 </suite>

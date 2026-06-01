@@ -15,9 +15,36 @@
                 <include name="e2e"/>
             </run>
         </groups>
-        <packages>
-            <package name="com.ilovepdf.tests.e2e"/>
-            <package name="com.ilovepdf.tests.regression"/>
-        </packages>
+        <classes>
+            <!-- Dedicated E2E workflows -->
+            <class name="com.ilovepdf.tests.e2e.PDFWorkflowE2ETest"/>
+
+            <!-- Regression classes that also contain e2e-tagged methods -->
+            <!-- Organize PDF -->
+            <class name="com.ilovepdf.tests.regression.MergePDFTests"/>
+            <class name="com.ilovepdf.tests.regression.SplitPDFTests"/>
+
+            <!-- Optimize PDF -->
+            <class name="com.ilovepdf.tests.regression.CompressPDFTests"/>
+
+            <!-- Convert to PDF -->
+            <class name="com.ilovepdf.tests.regression.WordToPDFTests"/>
+            <class name="com.ilovepdf.tests.regression.PowerPointToPDFTests"/>
+            <class name="com.ilovepdf.tests.regression.ExcelToPDFTests"/>
+
+            <!-- Convert from PDF -->
+            <class name="com.ilovepdf.tests.regression.PDFToWordTests"/>
+            <class name="com.ilovepdf.tests.regression.PDFToPowerPointTests"/>
+            <class name="com.ilovepdf.tests.regression.PDFToExcelTests"/>
+            <class name="com.ilovepdf.tests.regression.PDFToJPGTests"/>
+
+            <!-- Edit PDF -->
+            <class name="com.ilovepdf.tests.regression.RotatePDFTests"/>
+
+            <!-- PDF Security -->
+            <class name="com.ilovepdf.tests.regression.ProtectPDFTests"/>
+            <class name="com.ilovepdf.tests.regression.UnlockPDFTests"/>
+        </classes>
     </test>
+
 </suite>

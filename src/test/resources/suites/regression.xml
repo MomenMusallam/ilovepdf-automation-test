@@ -15,9 +15,33 @@
                 <include name="regression"/>
             </run>
         </groups>
-        <packages>
-            <package name="com.ilovepdf.tests.regression"/>
-            <package name="com.ilovepdf.tests.smoke"/>
-        </packages>
+        <classes>
+  
+            <!-- Organize PDF -->
+            <class name="com.ilovepdf.tests.regression.MergePDFTests"/>
+            <class name="com.ilovepdf.tests.regression.SplitPDFTests"/>
+
+            <!-- Optimize PDF -->
+            <class name="com.ilovepdf.tests.regression.CompressPDFTests"/>
+
+            <!-- Convert to PDF -->
+            <class name="com.ilovepdf.tests.regression.WordToPDFTests"/>
+            <class name="com.ilovepdf.tests.regression.PowerPointToPDFTests"/>
+            <class name="com.ilovepdf.tests.regression.ExcelToPDFTests"/>
+
+            <!-- Convert from PDF -->
+            <class name="com.ilovepdf.tests.regression.PDFToWordTests"/>
+            <class name="com.ilovepdf.tests.regression.PDFToPowerPointTests"/>
+            <class name="com.ilovepdf.tests.regression.PDFToExcelTests"/>
+            <class name="com.ilovepdf.tests.regression.PDFToJPGTests"/>
+
+            <!-- Edit PDF -->
+            <class name="com.ilovepdf.tests.regression.RotatePDFTests"/>
+
+            <!-- PDF Security -->
+            <class name="com.ilovepdf.tests.regression.ProtectPDFTests"/>
+            <class name="com.ilovepdf.tests.regression.UnlockPDFTests"/>
+        </classes>
     </test>
+
 </suite>

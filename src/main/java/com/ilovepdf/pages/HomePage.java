@@ -79,24 +79,24 @@ public class HomePage extends BasePage {
         log.info("Navigated to PDF to PowerPoint page");
         return new PDFToPowerPointPage();
     }
-//
-//    public PDFToExcelPage goToPDFToExcel() {
-//        click(pdfToExcelTile);
-//        log.info("Navigated to PDF to Excel page");
-//        return new PDFToExcelPage();
-//    }
-//
+
+    public PDFToExcelPage goToPDFToExcel() {
+        click(pdfToExcelTile);
+        log.info("Navigated to PDF to Excel page");
+        return new PDFToExcelPage();
+    }
+
     public WordToPDFPage goToWordToPDF() {
         click(wordToPdfTile);
         log.info("Navigated to Word to PDF page");
         return new WordToPDFPage();
     }
-//
-//    public PowerPointToPDFPage goToPowerPointToPDF() {
-//        click(powerPointToPdfTile);
-//        log.info("Navigated to PowerPoint to PDF page");
-//        return new PowerPointToPDFPage();
-//    }
+
+    public PowerPointToPDFPage goToPowerPointToPDF() {
+        click(powerPointToPdfTile);
+        log.info("Navigated to PowerPoint to PDF page");
+        return new PowerPointToPDFPage();
+    }
 
     public ExcelToPDFPage goToExcelToPDF() {
         click(excelToPdfTile);
@@ -104,23 +104,13 @@ public class HomePage extends BasePage {
         return new ExcelToPDFPage();
     }
 
-//    public EditPDFPage goToEditPDF() {
-//        click(editPdfTile);
-//        log.info("Navigated to Edit PDF page");
-//        return new EditPDFPage();
-//    }
-//
+
     public PDFToJPGPage goToPDFToJPG() {
         click(pdfToJpgTile);
         log.info("Navigated to PDF to JPG page");
         return new PDFToJPGPage();
     }
-//
-//    public JPGToPDFPage goToJPGToPDF() {
-//        click(jpgToPdfTile);
-//        log.info("Navigated to JPG to PDF page");
-//        return new JPGToPDFPage();
-//    }
+
 
     public RotatePDFPage goToRotatePDF() {
         click(rotatePdfTile);
@@ -140,11 +130,7 @@ public class HomePage extends BasePage {
         return new ProtectPDFPage();
     }
     
-//    public WatermarkPDFPage goToWatermarkPDF() {
-//        click(watermarkPdfTile);
-//        log.info("Navigated to Watermark PDF page");
-//        return new WatermarkPDFPage();
-//    }
+
 
     // ─────────────────────────────────────────────────────────────────────────
     // State queries
@@ -168,5 +154,7 @@ public class HomePage extends BasePage {
     public boolean isLoginButtonDisplayed()      { return isDisplayed(loginButton); }
     public boolean isSignupButtonDisplayed()     { return isDisplayed(signupButton); }
     public boolean isWatermarkPdfTileDisplayed()  { return isDisplayed(watermarkPdfTile); }
+
+    
 
 }

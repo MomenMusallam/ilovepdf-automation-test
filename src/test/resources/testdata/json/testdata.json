@@ -18,15 +18,108 @@
     "expectedResult": "validation_error"
   },
   {
+    "testCase": "TC_LOGIN_004",
+    "email": "notanemail",
+    "password": "Test@1234",
+    "expectedResult": "validation_error"
+  },
+  {
     "testCase": "TC_MERGE_001",
     "file1": "sample1.pdf",
     "file2": "sample2.pdf",
     "expectedResult": "merged"
   },
   {
+    "testCase": "TC_MERGE_002",
+    "file1": "sample1.pdf",
+    "file2": "sample2.pdf",
+    "file3": "sample3.pdf",
+    "expectedResult": "merged"
+  },
+  {
+    "testCase": "TC_SPLIT_001",
+    "file": "sample1.pdf",
+    "mode": "all-pages",
+    "expectedResult": "split"
+  },
+  {
+    "testCase": "TC_SPLIT_002",
+    "file": "sample1.pdf",
+    "mode": "ranges",
+    "ranges": "1-2",
+    "expectedResult": "split"
+  },
+  {
     "testCase": "TC_COMPRESS_001",
     "file": "sample1.pdf",
     "compressionLevel": "recommended",
     "expectedResult": "compressed"
+  },
+  {
+    "testCase": "TC_COMPRESS_002",
+    "file": "sample1.pdf",
+    "compressionLevel": "extreme",
+    "expectedResult": "compressed"
+  },
+  {
+    "testCase": "TC_COMPRESS_003",
+    "file": "sample1.pdf",
+    "compressionLevel": "low",
+    "expectedResult": "compressed"
+  },
+  {
+    "testCase": "TC_PDF2W_001",
+    "file": "sample1.pdf",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_PDF2P_001",
+    "file": "sample1.pdf",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_PDF2E_001",
+    "file": "sample1.pdf",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_W2PDF_001",
+    "file": "sample1.docx",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_PPT2PDF_001",
+    "file": "sample1.pptx",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_XLS2PDF_001",
+    "file": "sample1.xlsx",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_EDIT_001",
+    "file": "sample1.pdf",
+    "expectedResult": "edited"
+  },
+  {
+    "testCase": "TC_PDF2J_001",
+    "file": "sample1.pdf",
+    "quality": "high",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_JPG2PDF_001",
+    "file": "sample1.jpg",
+    "orientation": "portrait",
+    "pageSize": "a4",
+    "expectedResult": "converted"
+  },
+  {
+    "testCase": "TC_JPG2PDF_002",
+    "file": "sample1.jpg",
+    "orientation": "landscape",
+    "pageSize": "letter",
+    "expectedResult": "converted"
   }
 ]
