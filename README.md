@@ -8,10 +8,10 @@ Enterprise-grade Selenium WebDriver + TestNG automation framework for [ilovepdf.
 
 | Name | Role |
 |------|------|
+| Momen Musallam | Team Leader & QA Engineer |
 | Rozan Abu Kwiak | QA Engineer |
 | Qusay Terawi | QA Engineer |
 | Alaa Abu-Duqa | QA Engineer |
-| Momen Musallam | QA Engineer |
 | Safa Abu-Hadeed | QA Engineer |
 
 
